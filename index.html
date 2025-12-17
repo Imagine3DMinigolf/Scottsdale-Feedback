@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How was your round?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Golf Course Palette */
+            --primary-green: #2e7d32; 
+            --dark-green: #1b5e20;
+            --light-bg: #f5f7fa;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: var(--white);
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-placeholder {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            text-decoration: none;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Option A: The Happy Path */
+        .btn-positive {
+            background-color: var(--primary-green);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(46, 125, 50, 0.39);
+        }
+        
+        .btn-positive:hover {
+            background-color: var(--dark-green);
+        }
+
+        /* Option B: The Feedback Path */
+        .btn-negative {
+            background-color: #e0e0e0;
+            color: #555;
+        }
+
+        .btn-negative:hover {
+            background-color: #d6d6d6;
+        }
+
+        .icon {
+            margin-right: 12px;
+            font-size: 22px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-placeholder">⛳ GOLF COURSE NAME</div>
+
+        <h1>How was your round?</h1>
+        <p>We'd love to hear about your experience on the course today.</p>
+
+        <a href="#" id="goodLink" class="btn btn-positive" onclick="handleReview()">
+            <i class="fa-solid fa-star icon"></i>
+            It was great!
+        </a>
+
+        <a href="#" id="badLink" class="btn btn-negative" onclick="handleFeedback()">
+            <i class="fa-solid fa-comment-dots icon"></i>
+            Could be better
+        </a>
+    </div>
+
+    <div class="footer">
+        Thanks for playing with us!
+    </div>
+
+    <script>
+        // ==========================================
+        // CONFIGURATION SECTION - EDIT THESE LINKS
+        // ==========================================
+        
+        // 1. Paste your Google Review Direct Link here
+        const googleReviewURL = "https://g.page/r/CfAtY9vlSO8CEBE/review";
+
+        // 2. Configure the Email Settings
+        const ownerEmail = "imagine3dminigolf@gmail.com"; // Put the owner's email here
+        const emailSubject = "Feedback regarding my round";
+        const emailBody = "Hi, I wanted to share some feedback about my experience today...";
+
+        // ==========================================
+        
+        function handleReview() {
+            window.location.href = googleReviewURL;
+        }
+
+        function handleFeedback() {
+            // This constructs the mailto link with subject and body pre-filled
+            const mailtoLink = `mailto:${ownerEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
