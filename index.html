@@ -42,9 +42,12 @@
 
         .logo-placeholder {
             margin-bottom: 20px;
-            font-size: 24px;
+            /* This is the magic line: */
+            font-size: clamp(14px, 5vw, 22px); 
             font-weight: bold;
             color: var(--primary-green);
+            white-space: nowrap; /* Forces text to stay on one line */
+            width: 100%; /* Ensures it uses full width */
         }
 
         h1 {
@@ -165,6 +168,7 @@
 </body>
 
 </html>
+
 
 
 
