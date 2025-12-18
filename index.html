@@ -42,13 +42,21 @@
 
         .logo-placeholder {
             margin-bottom: 20px;
-            /* This is the magic line: */
-            font-size: clamp(14px, 5vw, 22px); 
+            font-size: 24px; 
             font-weight: bold;
             color: var(--primary-green);
-            white-space: nowrap; /* Forces text to stay on one line */
-            width: 100%; /* Ensures it uses full width */
+            line-height: 1.2; /* Keeps the two lines close together */
         }
+
+        .logo-sub {
+            display: block; /* Forces it to the next line */
+            font-size: 16px; /* Smaller font for the location */
+            font-weight: 600; /* Semi-bold */
+            color: #666; /* Grey color to separate it from the main title */
+            margin-top: 5px; /* A tiny bit of space */
+        }
+
+
 
         h1 {
             font-size: 24px;
@@ -120,7 +128,10 @@
 <body>
 
     <div class="container">
-        <div class="logo-placeholder">🦄 Imagine 3D Mini Golf - Scottsdale 🐉</div>
+        <div class="logo-placeholder">
+        🦄 Imagine 3D Mini Golf 🐉
+        <span class="logo-sub">Scottsdale</span>
+    </div>
 
         <h1>Was your experience up to par? </h1>
         <p>We'd love to hear from you!</p>
@@ -168,6 +179,7 @@
 </body>
 
 </html>
+
 
 
 
